@@ -21,12 +21,12 @@ http://localhost:8080/threads
 http://localhost:8080/health
 ```
 
-##Run on OCP
+## Run on OCP
 ```
 export INVENTORY_PRJ=mr-inventory-swarm 
 ```
 
-###Create project on OCP
+### Create project on OCP
 ```
 oc new-project $INVENTORY_PRJ
 ```
