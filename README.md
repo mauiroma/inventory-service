@@ -1,24 +1,26 @@
 # README
 
+This project demostrate wildfly-swam into OCP
+
 ## Run Locally
 mvn wildfly-swarm:run -Dmaven.test.skip=true
 
 ### Testing Locally
 ```
-http://localhost:8080/inventory/1
+curl http://localhost:8080/inventory/1
 ```
 ### Testing Locally Monitoring fraction
 ```
-http://localhost:8080/node
+curl http://localhost:8080/node
 ```
 ```
-http://localhost:8080/heap
+curl http://localhost:8080/heap
 ```
 ```
-http://localhost:8080/threads
+curl http://localhost:8080/threads
 ```
 ```
-http://localhost:8080/health
+curl http://localhost:8080/health
 ```
 
 ## Run on OCP
@@ -49,21 +51,22 @@ mvn clean fabric8:deploy -Popenshift -Dfabric8.namespace=$INVENTORY_PRJ -Dmaven.
 Get exposed route and then use to call the service
 ```
 oc get route -n $INVENTORY_PRJ
+export ROUTE=`oc get route inventory-service -o template --template='{{.spec.host}}'`
 ```
 ```
-http://<ROUTE>/inventory/1
+curl http://${ROUTE}/inventory/1
 ```
 
 ### Testing on OCP Monitoring fraction
 ```
-http://<ROUTE>/node
+curl http://${ROUTE}/node
 ```
 ```
-http://<ROUTE>/heap
+curl http://${ROUTE}/heap
 ```
 ```
-http://<ROUTE>/threads
+curl http://${ROUTE}/threads
 ```
 ```
-http://<ROUTE>/health
+curl http://${ROUTE}/health
 ```
