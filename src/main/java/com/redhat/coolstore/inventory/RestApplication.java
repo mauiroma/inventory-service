@@ -1,8 +1,8 @@
-package com.redhat.cloudnative.inventory;
+package com.redhat.coolstore.inventory;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
 @ApplicationPath("/")
-public class InventoryApplication extends Application {
+public class RestApplication extends Application {
 }
