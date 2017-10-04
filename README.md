@@ -60,13 +60,7 @@ curl http://${ROUTE}/inventory/1
 ### Testing on OCP Monitoring fraction
 ```
 curl http://${ROUTE}/node
-```
-```
 curl http://${ROUTE}/heap
-```
-```
 curl http://${ROUTE}/threads
-```
-```
 curl http://${ROUTE}/health
 ```
